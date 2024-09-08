@@ -122,16 +122,19 @@
         await Promise.all([
             spin(slot1, 500, () => {
                 if (getSlotValue(slot1) == 3) {
+                    win1 = true;
                     play3Sound();
                 }
             }),
             spin(slot2, 1000, () => {
                 if (getSlotValue(slot2) == 1 && win1) {
+                    win2 = true;
                     play1Sound();
                 }
             }),
             spin(slot3, 1500, () => {
                 if (getSlotValue(slot3) == 4 && win1 && win2) {
+                    win3 = true;
                     play4Sound();
                 }
             })
